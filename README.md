@@ -1,2 +1,2 @@
 # spring-drools
-rule engine for admission
+integration of Spring With Drool engine using excel sheet and .drl file

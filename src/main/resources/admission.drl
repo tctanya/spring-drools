@@ -1,0 +1,28 @@
+package KieRule;
+import com.admission.drools.api.Student;
+import com.admission.drools.api.StudentIdGenerator;
+
+
+rule "DPS"
+
+when
+studentObject : Student(schoolName=="DPS" && previousPercentage>80);
+then
+studentObject.setStudentId(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+rule "RIZVI"
+
+when
+studentObject : Student(schoolName=="RIZVI" && previousPercentage>75);
+then
+studentObject.setStudentId(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+rule "SUNBEAM"
+
+when
+studentObject : Student(schoolName=="SUNBEAM" && previousPercentage>70);
+then
+studentObject.setStudentId(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
