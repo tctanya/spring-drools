@@ -1,6 +1,6 @@
 package KieRule;
-import com.admission.drools.api.Student;
-import com.admission.drools.api.StudentIdGenerator;
+import com.admission.drools.api.model.Student;
+import com.admission.drools.api.utilities.StudentIdGenerator;
 
 
 rule "DPS"

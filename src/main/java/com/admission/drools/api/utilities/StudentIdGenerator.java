@@ -1,4 +1,4 @@
-package com.admission.drools.api;
+package com.admission.drools.api.utilities;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 

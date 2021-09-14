@@ -1,4 +1,4 @@
-package com.admission.drools.api;
+package com.admission.drools.api.configs;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class DroolConfig {
 
 	private KieFileSystem getKieFileSystem() throws IOException {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-		kieFileSystem.write(ResourceFactory.newClassPathResource("admission.xlsx"));
+		kieFileSystem.write(ResourceFactory.newClassPathResource("enrollLearner.xlsx"));
 		return kieFileSystem;
 
 	}

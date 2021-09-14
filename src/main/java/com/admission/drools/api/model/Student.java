@@ -1,4 +1,4 @@
-package com.admission.drools.api;
+package com.admission.drools.api.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
