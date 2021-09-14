@@ -1,0 +1,45 @@
+package KieRule;
+import com.admission.drools.api.model.CGILearner;
+import com.admission.drools.api.utilities.StudentIdGenerator;
+
+rule "Java"
+when
+learnerObject : CGILearner(hscPercentage>75);
+then
+learnerObject.setEligibility("Eligible");
+learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+rule "JavaScript"
+when
+learnerObject : CGILearner(courseName=="JavaScript" && hscPercentage>70 && sscPercentage>70);
+then
+learnerObject.setEligibility("Eligible for JavaScript");
+learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+rule "Angular"
+when
+learnerObject : CGILearner(courseName=="Angular" && graduationPercentage>65);
+then
+learnerObject.setEligibility("Eligible for Angular");
+learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+
+rule "FullStack Developer"
+when
+learnerObject : CGILearner(courseName=="FullStack Developer" && hscPercentage>70 && sscPercentage>70 && graduationPercentage>70 && cgiEntranceExamPercentage>75);
+then
+learnerObject.setEligibility("Eligible for FullStack Developer");
+learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
+rule "MeanStack Developer"
+when
+learnerObject : CGILearner(courseName=="MeanStack Developer" && hscPercentage>70 && sscPercentage>70 && graduationPercentage>70 && cgiEntranceExamPercentage>75);
+then
+learnerObject.setEligibility("Eligible for MeanStack Developer");
+learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
+end;
+
