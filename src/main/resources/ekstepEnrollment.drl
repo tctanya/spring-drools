@@ -1,0 +1,18 @@
+package KieRule;
+import com.admission.drools.api.model.EkstepLearner;
+
+rule "Product Engineering Course"
+
+when
+learnerObject : EkstepLearner(graduationPercentage>75 && entranceExamPercentage>70 && isInterviewCleared());
+then
+learnerObject.setCourseEnrolled("Product Engineering Course");
+end;
+
+rule "Software Engineering Course"
+
+when
+learnerObject : EkstepLearner(graduationPercentage>75 && entranceExamPercentage>70 && !isInterviewCleared());
+then
+learnerObject.setCourseEnrolled("Software Engineering Course");
+end;

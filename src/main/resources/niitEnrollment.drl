@@ -1,0 +1,18 @@
+package KieRule;
+import com.admission.drools.api.model.NIITLearner;
+
+rule "Eligible"
+
+when
+learnerObject : NIITLearner(hscPercentage>75 && sscPercentage>75 && graduationPercentage>70 && isEntryExamCleared());
+then
+learnerObject.setEligibility("Eligible");
+end;
+
+rule "Not Eligible"
+
+when
+learnerObject : NIITLearner(hscPercentage>75 && sscPercentage>75 && graduationPercentage>70 && !isEntryExamCleared());
+then
+learnerObject.setEligibility("Not Eligible");
+end;

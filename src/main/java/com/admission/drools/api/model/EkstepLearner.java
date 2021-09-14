@@ -7,13 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Learner {
+public class EkstepLearner {
     private String learnerName;
     private String organisation;
-    private int hscPercentage;
-    private int sscPercentage;
     private int graduationPercentage;
-//    private String niitEntracePercentage;
-    private boolean EntryExamCleared;
+    private int entranceExamPercentage;
+    private boolean interviewCleared;
     private String courseEnrolled;
 }
