@@ -1,0 +1,29 @@
+package KieRule;
+import com.admission.drools.api.model.MultipleCommonCondition;
+
+rule "SC"
+
+when
+learnerObject : MultipleCommonCondition((university.equals("kerala") ||university.equals("hyderabad") ||university.equals("kolkata") ||university.equals("bangalore") ||university.equals("kolkata")) && (product.equals("java") ||product.equals("javascript") || product.equals("c++") ||product.equals("c#") ||product.equals("python")) && scholarshipTestPercentage>70 && background.equals("SC"));
+then
+learnerObject.setEligibility("Eligible for scholarship");
+learnerObject.setScholarship("50% of the total fee.");
+end;
+
+rule "OBC"
+
+when
+learnerObject : MultipleCommonCondition((university.equals("kerala") ||university.equals("hyderabad") ||university.equals("kolkata") ||university.equals("bangalore") ||university.equals("kolkata")) && (product.equals("java") ||product.equals("javascript") || product.equals("c++") ||product.equals("c#") ||product.equals("python")) && scholarshipTestPercentage>70 && background.equals("OBC"));
+then
+learnerObject.setEligibility("Eligible for scholarship");
+learnerObject.setScholarship("30% of the total fee.");
+end;
+
+rule "General"
+
+when
+learnerObject : MultipleCommonCondition((university.equals("kerala") ||university.equals("hyderabad") ||university.equals("kolkata") ||university.equals("bangalore") ||university.equals("kolkata")) && (product.equals("java") ||product.equals("javascript") || product.equals("c++") ||product.equals("c#") ||product.equals("python")) && scholarshipTestPercentage>70 && background.equals("GENERAL"));
+then
+learnerObject.setEligibility("Eligible for scholarship");
+learnerObject.setScholarship("10% of the total fee.");
+end;
