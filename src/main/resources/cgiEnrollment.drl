@@ -6,7 +6,7 @@ rule "Java"
 when
 learnerObject : CGILearner(hscPercentage>75);
 then
-learnerObject.setEligibility("Eligible");
+learnerObject.setEligibility("Eligible for Java");
 learnerObject.setLearnerRegistrationNumber(StudentIdGenerator.getUniqueIdFromTimestamp(0));
 end;
 
