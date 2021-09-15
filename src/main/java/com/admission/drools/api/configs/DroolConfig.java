@@ -23,7 +23,7 @@ public class DroolConfig {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
 //		kieFileSystem.write(ResourceFactory.newClassPathResource("niit-grade-calculator.xlsx"));
 //		kieFileSystem.write(ResourceFactory.newClassPathResource("ekstepEnrollment.drl"));
-		kieFileSystem.write(ResourceFactory.newClassPathResource("multiple-common-eligibility.xlsx"));
+		kieFileSystem.write(ResourceFactory.newClassPathResource("niit-grade-calculator.xlsx"));
 		System.out.println("File loaded...");
 		return kieFileSystem;
 

@@ -1,5 +1,6 @@
 package com.admission.drools.api.controllers;
 
+import com.admission.drools.api.model.GradeManager;
 import com.admission.drools.api.model.NIITLearner;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,15 @@ public class NIITEnrollmentController {
 //            throw new Exception("Bad Request Exception !!");
 //        }
         return reqMap;
+    }
+
+    @PostMapping("/v2/courseGrade/niit")
+    public GradeManager calculateGrade(@RequestBody GradeManager gradeManager) throws Exception {
+        session.insert(gradeManager);
+        session.fireAllRules();
+        if (gradeManager.getInterpretation() == null) {
+            throw new Exception("Bad Request Exception. Either learner is failed or not graded.");
+        }
+        return gradeManager;
     }
 }
