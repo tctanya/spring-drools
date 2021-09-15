@@ -21,7 +21,10 @@ public class DroolConfig {
 
 	private KieFileSystem getKieFileSystem() throws IOException {
 		KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
-		kieFileSystem.write(ResourceFactory.newClassPathResource("cgiEnrollment.drl"));
+//		kieFileSystem.write(ResourceFactory.newClassPathResource("niit-grade-calculator.xlsx"));
+//		kieFileSystem.write(ResourceFactory.newClassPathResource("ekstepEnrollment.drl"));
+		kieFileSystem.write(ResourceFactory.newClassPathResource("common-eligibility.xlsx"));
+		System.out.println("File loaded...");
 		return kieFileSystem;
 
 	}
