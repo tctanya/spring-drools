@@ -1,0 +1,38 @@
+package KieRule;
+import com.admission.drools.api.model.GradeManager;
+
+rule "Outstanding"
+
+when
+learnerObject : GradeManager(marksObtained>=85 && marksObtained<=100);
+then
+learnerObject.setInterpretation("Outstanding");
+learnerObject.setGrade("A");
+end;
+
+rule "Excellent"
+
+when
+learnerObject : GradeManager(marksObtained>=75 && marksObtained<=84.99);
+then
+learnerObject.setInterpretation("Excellent");
+learnerObject.setGrade("B");
+end;
+
+rule "Good"
+
+when
+learnerObject : GradeManager(marksObtained>=65 && marksObtained<=74.99);
+then
+learnerObject.setInterpretation("Good");
+learnerObject.setGrade("C");
+end;
+
+rule "Fair"
+
+when
+learnerObject : GradeManager(marksObtained>=50 && marksObtained<=64.99);
+then
+learnerObject.setInterpretation("Fair");
+learnerObject.setGrade("D");
+end;
