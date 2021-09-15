@@ -1,0 +1,10 @@
+package KieRule;
+import com.admission.drools.api.model.CommonEligibility;
+
+rule "Eligible"
+
+when
+learnerObject : CommonEligibility(hscPercentage>70 && sscPercentage>70 && subject=="physics");
+then
+learnerObject.setEligibility("Eligible for all the 5 products i.e Java, Javascript, C#, C++ and Python.");
+end;
