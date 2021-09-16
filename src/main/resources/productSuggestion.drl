@@ -1,0 +1,37 @@
+package KieRule;
+import com.admission.drools.api.model.ProductSuggestion;
+
+rule "Rule 1"
+when
+learnerObject : ProductSuggestion(percentage>=90 && percentage<=100);
+then
+learnerObject.setSuggestedProduct("Eligible for Products: FullStack developer, MernStack developer, Mean developer, Java developer");
+end;
+
+rule "Rule 2"
+when
+learnerObject : ProductSuggestion(percentage>=80 && percentage<90);
+then
+learnerObject.setSuggestedProduct("Eligible for Products: MernStack developer, Mean developer, Java developer");
+end;
+
+rule "Rule 3"
+when
+learnerObject : ProductSuggestion(percentage>=70 && percentage<80);
+then
+learnerObject.setSuggestedProduct("Eligible for Products: Mean developer, Java developer");
+end;
+
+rule "Rule 4"
+when
+learnerObject : ProductSuggestion(percentage>=60 && percentage<70);
+then
+learnerObject.setSuggestedProduct("Eligible for Product: Java developer");
+end;
+
+rule "Rule 5"
+when
+learnerObject : ProductSuggestion(percentage>=0 && percentage<60);
+then
+learnerObject.setSuggestedProduct("Not eligible for any product as your percentage is less than 60%.");
+end;

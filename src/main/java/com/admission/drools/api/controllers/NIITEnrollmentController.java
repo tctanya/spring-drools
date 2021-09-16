@@ -28,16 +28,8 @@ public class NIITEnrollmentController {
     @PostMapping("/v1/courseGrade/niit")
     public Map<String, Object> gradeCalculation(@RequestBody Map<String, Object> reqMap) throws Exception {
         System.out.println(reqMap.get("marks"));
-//        int marks= Integer.parseInt(reqMap.get("marks").toString());
-//        if ((Integer.parseInt(reqMap.get("marks").toString()) > 90 && Integer.parseInt(reqMap.get("marks").toString()) <= 100))
-//        {
-//            reqMap.put("interpretation", "Outstanding");
-//        }
         session.insert(reqMap);
         session.fireAllRules();
-//        if (reqMap.getMarks() == null) {
-//            throw new Exception("Bad Request Exception !!");
-//        }
         return reqMap;
     }
 
