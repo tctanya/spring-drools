@@ -23,9 +23,10 @@ public class MultipleCommonConditionController {
         multipleCommonCondition.setProduct(multipleCommonCondition.getProduct().toLowerCase(Locale.ROOT));
         session.insert(multipleCommonCondition);
         session.fireAllRules();
-//        if (multipleCommonCondition.getScholarship() == null) {
-//            throw new Exception("Learner is not eligible for any scholarship.");
-//        }
+        if (multipleCommonCondition.getScholarship() == null) {
+            multipleCommonCondition.setEligibility("Learner is not eligible for any scholarship.");
+            multipleCommonCondition.setScholarship("Sorry, you are not qualified for scholarship.");
+        }
         return multipleCommonCondition;
     }
 }

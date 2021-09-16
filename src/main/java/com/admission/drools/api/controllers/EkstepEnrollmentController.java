@@ -17,7 +17,7 @@ public class EkstepEnrollmentController {
         session.insert(ekstepLearner);
         session.fireAllRules();
         if (ekstepLearner.getCourseEnrolled() == null) {
-            throw new Exception("Bad Request Exception !!");
+            ekstepLearner.setCourseEnrolled("Not Eligible for Engineering Courses.");
         }
         return ekstepLearner;
     }

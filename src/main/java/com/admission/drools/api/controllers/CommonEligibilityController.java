@@ -22,7 +22,7 @@ public class CommonEligibilityController {
         session.insert(commonEligibility);
         session.fireAllRules();
         if (commonEligibility.getEligibility() == null) {
-            throw new Exception("Bad Request Exception. Learner is not eligible to be enrolled in any product.");
+            commonEligibility.setEligibility("Not Eligible for any product.");
         }
         return commonEligibility;
     }

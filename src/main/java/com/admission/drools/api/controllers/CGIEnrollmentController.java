@@ -18,8 +18,8 @@ public class CGIEnrollmentController {
     public CGILearner enrollLearner(@RequestBody CGILearner cgiLearner) throws Exception {
         session.insert(cgiLearner);
         session.fireAllRules();
-        if (cgiLearner.getLearnerRegistrationNumber() == null) {
-            throw new Exception("Bad Request Exception !!");
+        if (cgiLearner.getEligibility() == null) {
+            cgiLearner.setEligibility("Not Eligible for any courses.");
         }
         return cgiLearner;
     }

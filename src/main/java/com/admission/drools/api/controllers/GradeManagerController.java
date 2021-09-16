@@ -16,10 +16,14 @@ public class GradeManagerController {
 
     @PostMapping("/niit/calculate")
     public GradeManager calculateGrade(@RequestBody GradeManager gradeManager) throws Exception {
+        if(gradeManager.getMarksObtained()>0 && gradeManager.getMarksObtained()<=100){
+            gradeManager.setMarksObtained(gradeManager.getMarksObtained());
+        }
         session.insert(gradeManager);
         session.fireAllRules();
         if (gradeManager.getInterpretation() == null) {
-            throw new Exception("Bad Request Exception. Either learner is failed or not graded.");
+            gradeManager.setInterpretation("Not eligible for grading.");
+            gradeManager.setGrade("Not Graded.");
         }
         return gradeManager;
     }
