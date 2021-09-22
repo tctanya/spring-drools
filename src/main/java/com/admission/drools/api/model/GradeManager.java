@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GradeManager {
-    private String learnerId;
     private String courseEnrolled;
     private double marksObtained;
     private String interpretation;
