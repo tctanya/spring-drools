@@ -1,6 +1,5 @@
 package com.admission.drools.api.controllers;
 
-import com.admission.drools.api.model.NIITLearner;
 import com.admission.drools.api.model.Student;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
