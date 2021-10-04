@@ -14,7 +14,7 @@ public class GradeManagerServiceImpl implements GradeManagerService {
     private KieSession session;
     @Autowired
     FileLoader fileLoader;
-    @Value("${niit.grade.calculator.xlsx.read}")
+    @Value("${grade.calculator.xlsx.read}")
     String fileName;
 
     public GradeManager gradeInterpretation(GradeManager gradeManager) {

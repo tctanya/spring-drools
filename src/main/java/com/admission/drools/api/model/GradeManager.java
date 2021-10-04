@@ -12,4 +12,5 @@ public class GradeManager {
     private double marksObtained;
     private String interpretation;
     private String grade;
+    private String orgName;
 }
