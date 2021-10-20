@@ -22,5 +22,6 @@ public class GradeManagerController {
         }
         managerService.gradeInterpretation(gradeManager);
         return gradeManager;
+
     }
 }
